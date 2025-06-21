@@ -48,6 +48,7 @@ def sort_patient(sort_by: str = Query(..., description="sort on the basis if hei
     sorted_data = sorted(data.values(), key=lambda x: x.get(sort_by, 0), reverse= True if order== 'desc' else False)
     return sorted_data
 
+# Query parameters are used to filter the data first choose name and then order like ascending or descending
 
 
 
