@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path, HTTPException, Query
+from fastapi import FastAPI, Path, HTTPException, Query, BaseModel
 import json
 
 app = FastAPI()
@@ -53,5 +53,21 @@ def sort_patient(sort_by: str = Query(..., description="sort on the basis if hei
 
 
 
+## Pydantic 
+class Patient(BaseModel):
+    name: str
+    age: int
+    # height: float
+    # weight: float
+    # bmi: float
 
+def insert_data(patient:Patient):
+    print(patient.name)
+    print(patient.age)
+    print("inserted")
+
+
+pateint_info = {"name": "yash", "age":20}
+patient1 = Patient(**pateint_info)
+insert_data(patient1)
     
