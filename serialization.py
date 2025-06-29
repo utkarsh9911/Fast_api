@@ -25,3 +25,4 @@ temp2 = patient1.model_dump(exclude={'adress': ['city', 'state']})  # Exclude sp
 
 
 print(temp2)
+# print
